@@ -1,11 +1,11 @@
 const CONFIG = {
   // profile setting
   profile: {
-    name: "Жовтоводьський Фаховий Педагогічний Коледж ДОР",
-    image: "/logo.svg", // замените на файл с логотипом колледжа (в папке public)
+    name: "Вітаємо у нашому блогі!",
+    image: "/logo.png", // замените на файл с логотипом колледжа (в папке public)
     role: "Офіційний сайт",
     bio: "Офіційний блог Жовтоводьського Фахового Педагогічного Коледжу ДОР.",
-    email: "info@mycollege.edu.ua",       // при возможности
+    email: "zvpedkoledzh@gmail.com",       // при возможности
     linkedin: "",  // если есть
     github: "",
     instagram: "https://instagram.com/mycollege", // если есть
@@ -17,12 +17,12 @@ const CONFIG = {
     }
   ],
   blog: {
-    title: "Блог ЖФПК ДОР",
+    title: "Блог Жовтоводьського Фахового Педагогічного Коледжу ДОР",
     description: "Новини, події та освітні матеріали Жовтоводьського Фахового Педагогічного Коледжу ДОР.",
-    scheme: "system", // пусть переключается свет/тёмная в зависимости от системы
+    scheme: "system", // светлая/тёмная в зависимости от системы
   },
-  link: "https://blog.zvpedcol.fun",
-  since: 2022,
+  link: "https://zvpedcol.fun",
+  since: 2025,
   lang: "uk-UA",
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // можно позже заменить на свой генератор или статику
   notionConfig: {
