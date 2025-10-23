@@ -1,10 +1,14 @@
-import { AppPropsWithLayout } from "../types"
-import { Hydrate, QueryClientProvider } from "@tanstack/react-query"
-import { RootLayout } from "src/layouts"
-import { queryClient } from "src/libs/react-query"
+import "react-notion-x/src/styles.css";
+import "katex/dist/katex.min.css";
+import "prismjs/themes/prism-tomorrow.css";
+
+import { AppPropsWithLayout } from "../types";
+import { Hydrate, QueryClientProvider } from "@tanstack/react-query";
+import { RootLayout } from "src/layouts";
+import { queryClient } from "src/libs/react-query";
 
 function App({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout || ((page) => page)
+  const getLayout = Component.getLayout || ((page) => page);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -12,7 +16,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
         <RootLayout>{getLayout(<Component {...pageProps} />)}</RootLayout>
       </Hydrate>
     </QueryClientProvider>
-  )
+  );
 }
 
-export default App
+export default App;
