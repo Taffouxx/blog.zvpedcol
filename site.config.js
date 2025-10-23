@@ -1,37 +1,33 @@
 const CONFIG = {
-  // profile setting (required)
+  // profile setting
   profile: {
-    name: "Жовтоводьский Фаховий Педагогічний Коледж ДОР",
-    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "офіційний сайт",
-    bio: "Офіційний блог Жовтоводьский Фаховий Педагогічний Коледж ДОР.",
-    email: "",
-    linkedin: "",
+    name: "Жовтоводьський Фаховий Педагогічний Коледж ДОР",
+    image: "/logo.svg", // замените на файл с логотипом колледжа (в папке public)
+    role: "Офіційний сайт",
+    bio: "Офіційний блог Жовтоводьського Фахового Педагогічного Коледжу ДОР.",
+    email: "info@mycollege.edu.ua",       // при возможности
+    linkedin: "",  // если есть
     github: "",
-    instagram: "",
+    instagram: "https://instagram.com/mycollege", // если есть
   },
   projects: [
-    // Empty or add relevant college projects/links here
+    {
+      name: "Студентські Проєкти",
+      href: "https://studentprojects.mycollege.edu.ua"
+    }
   ],
-  // blog setting (required)
   blog: {
-    title: "Жовтоводьский Фаховий Педагогічний Коледж ДОР",
-    description: "Офіційний блог Жовтоводьский Фаховий Педагогічний Коледж ДОР",
-    scheme: "dark", // 'light' | 'dark' | 'system'
+    title: "Блог ЖФПК ДОР",
+    description: "Новини, події та освітні матеріали Жовтоводьського Фахового Педагогічного Коледжу ДОР.",
+    scheme: "system", // пусть переключается свет/тёмная в зависимости от системы
   },
-
-  // CONFIG configration (required)
-  link: "https://morethan-log.vercel.app",
-  since: 2022, // If leave this empty, current year will be used.
-  lang: "uk-UA", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
-  ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
-
-  // notion configuration (required)
+  link: "https://blog.zvpedcol.fun",
+  since: 2022,
+  lang: "uk-UA",
+  ogImageGenerateURL: "https://og-image-korean.vercel.app", // можно позже заменить на свой генератор или статику
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,
   },
-
-  // plugin configuration (optional)
   googleAnalytics: {
     enable: false,
     config: {
@@ -55,18 +51,18 @@ const CONFIG = {
     config: {
       repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
       "issue-term": "og:title",
-      label: "💬 Utterances",
+      label: "💬 Коментарі",
     },
   },
   cusdis: {
     enable: false,
     config: {
       host: "https://cusdis.com",
-      appid: "", // Embed Code -> data-app-id value
+      appid: "",
     },
   },
-  isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
-  revalidateTime: 21600 * 7, // revalidate time for [slug], index
+  isProd: process.env.VERCEL_ENV === "production",
+  revalidateTime: 300, // обновление каждые 5 минут
 }
 
 module.exports = { CONFIG }
