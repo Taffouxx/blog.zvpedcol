@@ -1,5 +1,5 @@
 import { CONFIG } from "site.config"
-import { ReactCusdis } from "react-cusdis"
+import { ReactCusdis } from "@pinging/react-cusdis"
 import { useCallback, useEffect, useState } from "react"
 import styled from "@emotion/styled"
 import useScheme from "src/hooks/useScheme"
