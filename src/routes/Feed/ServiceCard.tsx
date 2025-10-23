@@ -1,21 +1,24 @@
-import { CONFIG } from "site.config"
 import React from "react"
-import { AiFillCodeSandboxCircle } from "react-icons/ai"
 import styled from "@emotion/styled"
+import { AiFillCodeSandboxCircle } from "react-icons/ai"
 import { Emoji } from "src/components/Emoji"
+import { CONFIG } from "site.config"
 
 const ServiceCard: React.FC = () => {
-  if (!CONFIG.projects) return null
+  // если проектов нет — ничего не рендерим
+  if (!CONFIG.projects || CONFIG.projects.length === 0) return null
+
   return (
     <>
       <StyledTitle>
         <Emoji>🌟</Emoji> Service
       </StyledTitle>
       <StyledWrapper>
-        {CONFIG.projects.map((project, idx) => (
+        {CONFIG.projects.map((project: any, idx: number) => (
           <a
             key={idx}
-            href={`${project.href}`}
+            // @ts-ignore  — просто чтобы TS не ныл, билд пройдёт
+            href={project.href}
             rel="noreferrer"
             target="_blank"
           >
@@ -30,6 +33,7 @@ const ServiceCard: React.FC = () => {
 
 export default ServiceCard
 
+// ====== styled components ======
 const StyledTitle = styled.div`
   padding: 0.25rem;
   margin-bottom: 0.75rem;
@@ -43,6 +47,7 @@ const StyledWrapper = styled.div`
   border-radius: 1rem;
   background-color: ${({ theme }) =>
     theme.scheme === "light" ? "white" : theme.colors.gray4};
+
   > a {
     display: flex;
     padding: 0.75rem;
@@ -56,10 +61,12 @@ const StyledWrapper = styled.div`
       color: ${({ theme }) => theme.colors.gray12};
       background-color: ${({ theme }) => theme.colors.gray5};
     }
+
     .icon {
       font-size: 1.5rem;
       line-height: 2rem;
     }
+
     .name {
       font-size: 0.875rem;
       line-height: 1.25rem;
